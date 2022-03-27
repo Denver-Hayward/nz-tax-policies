@@ -11,18 +11,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2.1.0
 
-      - run: npm i
-      - run: npm run build
+      - name: Build
+        run: npm i
+        run: npm run build
 
-      - name: Deploy 🚀
+      - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.2.5
         with:
-          branch: gh-pages # The branch the action should deploy to.
-          folder: build # The folder the action should deploy.
-
-      # - run: git config --local user.email "action@github.com"
-      # - run: git config --local user.name "GitHub Action"
-      # - run: git subtree add --prefix build origin gh-pages --squash
-      # - run: git subtree pull --prefix build origin gh-pages --squash
-      # - run: git add -A
-      # - run: git subtree push --prefix dist origin gh-pages
+          branch: gh-pages
+          folder: build
