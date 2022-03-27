@@ -12,8 +12,9 @@ jobs:
       - uses: actions/checkout@v2.1.0
       - run: git config --local user.email "action@github.com"
       - run: git config --local user.name "GitHub Action"
+      - run: git subtree add --prefix build origin gh-pages --squash
+      - run: git subtree pull --prefix build origin gh-pages --squash
       - run: npm i
       - run: npm run build
       - run: git add -A
-      - run: git commit -m "test"
       - run: git subtree push --prefix dist origin gh-pages
