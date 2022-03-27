@@ -9,6 +9,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      - run: git config --global user.email "deploy@null.com"
+      - run: git config --global user.name "GitHub action deploy"
       - uses: actions/checkout@v2.1.0
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: npm i
