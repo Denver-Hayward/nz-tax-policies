@@ -3,7 +3,7 @@ import { Person } from "./Person";
 export class Household {
     public people: Person[];
 
-    constructor(data: Partial<Household>) {
+    constructor(data: Partial<Household> = {}) {
         Object.assign(this, data);
     }
 
