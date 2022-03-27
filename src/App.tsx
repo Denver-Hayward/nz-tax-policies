@@ -2,7 +2,6 @@ import logo from './logo.svg';
 import './App.css';
 import { CurrentFTC } from './parties/Current/CurrentFTC';
 import { Household } from './household/Household';
-import { findByText } from '@testing-library/react';
 import { Person } from './household/Person';
 
 
