@@ -9,10 +9,9 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2.1.0
       - run: git config --local user.email "action@github.com"
       - run: git config --local user.name "GitHub Action"
-      - uses: actions/checkout@v2.1.0
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: npm i
       - run: npm run build
       - run: git subtree push --prefix build https://<GITHUB_ACCESS_TOKEN>@github.com/<GITHUB_USERNAME>/<REPOSITORY_NAME>.git gh-pages
